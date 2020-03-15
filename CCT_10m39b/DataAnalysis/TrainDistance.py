@@ -34,15 +34,3 @@ error_test = root_mean_square(Y_test - Y_test_predict)
 
 print(error_test)
 
-# %%
-from sklearn.linear_model import RidgeCV
-
-reg = RidgeCV()                 # 6.57
-# reg = LassoCV()                 # 7.38
-# reg = DecisionTreeRegressor()   # 8.96
-# reg = MLPRegressor()            # 17.9
-reg.fit(X_train, Y_train)
-Y_test_predict_ridge = reg.predict(X_test)
-error_test_comp = root_mean_square(Y_test - Y_test_predict_ridge)
-
-print(error_test_comp)
